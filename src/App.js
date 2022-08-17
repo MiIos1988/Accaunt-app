@@ -24,7 +24,7 @@ function App() {
     },
   ]);
   const sendNewAccount = (input) => {
-    console.log("radi");
+    setAccount([...account, input]);
   };
   return (
     <div className="App">
@@ -33,12 +33,15 @@ function App() {
         <Route
           path="/"
           element={
-            <NewAccount.Provider value={sendNewAccount()}>
-              <Accounts accounts={account} />
-            </NewAccount.Provider>
+            // <NewAccount.Provider value={sendNewAccount()}>
+            <Accounts accounts={account} />
+            // </NewAccount.Provider>
           }
         />
-        <Route path="/addaccount" element={<Add />} />
+        <Route
+          path="/addaccount"
+          element={<Add sendNewAccount={sendNewAccount} />}
+        />
         <Route path="/edit-delete" element={<EditDel />} />
       </Routes>
     </div>

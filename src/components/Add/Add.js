@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { NewAccount } from "../../App";
 
-const Add = () => {
+const Add = ({ sendNewAccount }) => {
   const [input, setInput] = useState({});
   const newAcc = useContext(NewAccount);
 
@@ -51,6 +51,9 @@ const Add = () => {
       <button
         onClick={(e) => {
           e.preventDefault();
+          {
+            sendNewAccount(input);
+          }
         }}
       >
         Save

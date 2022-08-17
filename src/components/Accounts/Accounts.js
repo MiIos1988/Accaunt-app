@@ -2,7 +2,7 @@ import React from "react";
 import OneAcc from "../OneAcc/OneAcc";
 import "./Accounts.scss";
 
-const Accounts = ({ accounts }) => {
+const Accounts = ({ accounts}) => {
   const allAccount = accounts.map((account, index) => (
     <OneAcc account={account} key={index} />
   ));
