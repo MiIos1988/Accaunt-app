@@ -4,6 +4,7 @@ import Accounts from "./components/Accounts/Accounts.js";
 import Add from "./components/Add/Add.js";
 import EditDel from "./components/EditDel/EditDel.js";
 import Header from "./components/Header/Header.js";
+export const NewAccount = React.createContext();
 
 function App() {
   const [account, setAccount] = useState([
@@ -22,11 +23,21 @@ function App() {
       email: "suza@gmail.com",
     },
   ]);
+  const sendNewAccount = (input) => {
+    console.log("radi");
+  };
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Accounts accounts={account} />} />
+        <Route
+          path="/"
+          element={
+            <NewAccount.Provider value={sendNewAccount()}>
+              <Accounts accounts={account} />
+            </NewAccount.Provider>
+          }
+        />
         <Route path="/addaccount" element={<Add />} />
         <Route path="/edit-delete" element={<EditDel />} />
       </Routes>
