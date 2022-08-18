@@ -35,7 +35,7 @@ const Add = ({ sendNewAccount, account }) => {
         />
         <br />
         <input
-          type="number"
+          type="phone"
           onChange={(e) => {
             setInput({ ...input, phone: e.target.value });
           }}
@@ -43,7 +43,7 @@ const Add = ({ sendNewAccount, account }) => {
         />
         <br />
         <input
-          type="text"
+          type="email"
           onChange={(e) => {
             setInput({ ...input, email: e.target.value });
           }}

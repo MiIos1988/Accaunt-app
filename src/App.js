@@ -40,9 +40,9 @@ function App() {
         />
         <Route
           path="/addaccount"
-          element={<Add sendNewAccount={sendNewAccount} account={account}/>}
+          element={<Add sendNewAccount={sendNewAccount} account={account} />}
         />
-        <Route path="/edit-delete" element={<EditDel />} />
+        <Route path="/edit-delete" element={<EditDel accounts={account} />} />
       </Routes>
     </div>
   );
