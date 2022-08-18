@@ -1,0 +1,26 @@
+.addAccounts {
+  h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 3rem 15rem;
+  }
+}
+.input {
+  margin-left: 25rem;
+  width: 60%;
+  // margin: 3rem auto;
+  input {
+    width: 50%;
+    margin: 10px;
+    padding: 5px;
+    font-size: 1rem;
+  }
+  button {
+    width: 50%;
+    margin: 10px;
+    padding: 7px;
+    background-color: blue;
+    color: white;
+    border: none;
+  }
+}
