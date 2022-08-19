@@ -1,7 +1,8 @@
 import React from "react";
 import "./OneAccDel.scss";
+import { Link } from "react-router-dom";
 
-const OneAccDel = ({ account }) => {
+const OneAccDel = ({ account, deletAccount }) => {
   return (
     <tr>
       <td>{account.id}</td>
@@ -13,14 +14,16 @@ const OneAccDel = ({ account }) => {
         <button
           className="del-btn"
           onClick={(e) => {
-            console.log(e);
+            deletAccount(account.id);
           }}
         >
           Delate
         </button>
       </td>
       <td>
-        <button className="edit-btn">Edit</button>
+        <Link to={"/edit/" + account.id} className="edit-btn">
+          Edit
+        </Link>
       </td>
     </tr>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 import OneAccDel from "../OneAccDel/OneAccDel";
 
-const EditDel = ({ accounts }) => {
+const EditDel = ({ accounts, deletAccount }) => {
   const allAccount = accounts.map((account, index) => (
-    <OneAccDel account={account} key={index} />
+    <OneAccDel account={account} key={index} deletAccount={deletAccount}/>
   ));
   return (
     <div className="accounts">

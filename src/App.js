@@ -4,6 +4,7 @@ import Accounts from "./components/Accounts/Accounts.js";
 import Add from "./components/Add/Add.js";
 import EditDel from "./components/EditDel/EditDel.js";
 import Header from "./components/Header/Header.js";
+import Edit from "./Edit/Edit.js";
 export const NewAccount = React.createContext();
 
 function App() {
@@ -26,6 +27,15 @@ function App() {
   const sendNewAccount = (input) => {
     setAccount([...account, input]);
   };
+
+  const deletAccount = (del) => {
+    setAccount(
+      account.filter((acc) => {
+        return acc.id !== del;
+      })
+    );
+    console.log(account);
+  };
   return (
     <div className="App">
       <Header />
@@ -42,7 +52,11 @@ function App() {
           path="/addaccount"
           element={<Add sendNewAccount={sendNewAccount} account={account} />}
         />
-        <Route path="/edit-delete" element={<EditDel accounts={account} />} />
+        <Route
+          path="/edit-delete"
+          element={<EditDel accounts={account} deletAccount={deletAccount} />}
+        />
+        <Route path="/edit/:id" element={<Edit />} />
       </Routes>
     </div>
   );

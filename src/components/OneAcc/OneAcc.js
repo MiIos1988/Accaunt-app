@@ -1,6 +1,7 @@
 import React from "react";
 const OneAcc = ({ account }) => {
   return (
+  
     <tr>
       <td>{account.id}</td>
       <td>{account.name}</td>
