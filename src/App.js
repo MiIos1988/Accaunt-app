@@ -36,6 +36,14 @@ function App() {
     );
     console.log(account);
   };
+
+  const editAccount = (editInput) => {
+    const accountPosition = account.map((acc) => acc.id).indexOf(editInput.id);
+
+    account[accountPosition] = editInput;
+
+    setAccount(account);
+  };
   return (
     <div className="App">
       <Header />
@@ -52,11 +60,16 @@ function App() {
           path="/addaccount"
           element={<Add sendNewAccount={sendNewAccount} account={account} />}
         />
+        {/* <Switch> */}
         <Route
-          path="/edit-delete"
+          path="/edit"
           element={<EditDel accounts={account} deletAccount={deletAccount} />}
         />
-        <Route path="/edit/:id" element={<Edit />} />
+        <Route
+          path="/edit/:id"
+          element={<Edit accounts={account} editAccount={editAccount} />}
+        />
+        {/* </Switch> */}
       </Routes>
     </div>
   );

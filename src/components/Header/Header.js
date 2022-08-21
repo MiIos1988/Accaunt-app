@@ -17,7 +17,7 @@ const Header = () => {
             <NavLink to="/addaccount">Add Account</NavLink>
           </li>
           <li>
-            <NavLink to="/edit-delete">Edit/Delete</NavLink>
+            <NavLink to="/edit">Edit/Delete</NavLink>
           </li>
         </ul>
       </div>
