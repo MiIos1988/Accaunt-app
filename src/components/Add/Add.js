@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { NewAccount } from "../../App";
 import "./Add.scss";
 
 const Add = ({ sendNewAccount, account }) => {
   const [input, setInput] = useState({ id: account.length + 1 });
-  const newAcc = useContext(NewAccount);
   const navigate = useNavigate();
   const focusInp = useRef();
   useEffect(() => {

@@ -2,7 +2,7 @@ import React from "react";
 import "./OneAccDel.scss";
 import { Link } from "react-router-dom";
 
-const OneAccDel = ({ account, deletAccount }) => {
+const OneAccDel = ({ account, deleteAccount }) => {
   return (
     <tr>
       <td>{account.id}</td>
@@ -14,7 +14,7 @@ const OneAccDel = ({ account, deletAccount }) => {
         <button
           className="del-btn"
           onClick={(e) => {
-            deletAccount(account.id);
+            deleteAccount(account.id);
           }}
         >
           Delate
